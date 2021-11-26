@@ -1,5 +1,6 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:inventory_app/splash.dart';
+import 'package:inventory_app/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Splash(),
+      home: AnimatedSplashScreen(
+        splash: Icons.home,
+        duration: 5000,
+        nextScreen: MyHomePage(title: "Inventory App"),
+        splashTransition: SplashTransition.rotationTransition,
+        backgroundColor: Colors.blue,
+        // pageTransitionType: PageTransitionType.scale,
+      ),
     );
   }
 }
