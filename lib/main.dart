@@ -2,12 +2,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:inventory_app/home.dart';
 import 'package:firebase_core/firebase_core.dart';
-
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(MyApp());
-}
+import 'package:inventory_app/signin.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -21,7 +16,7 @@ class MyApp extends StatelessWidget {
       home: AnimatedSplashScreen(
         splash: Icons.home,
         duration: 5000,
-        nextScreen: MyHomePage(title: "Inventory App"),
+        nextScreen: Signin(),
         splashTransition: SplashTransition.rotationTransition,
         backgroundColor: Colors.blue,
         // pageTransitionType: PageTransitionType.scale,
